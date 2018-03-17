@@ -1,5 +1,5 @@
 FROM ubuntu:16.04
-MAINTAINER Christian Lück <christian@lueck.tv>
+LABEL maintainer="aaron@spettl.de"
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y \
   nginx supervisor php7.0-fpm php7.0-cli php7.0-curl php7.0-gd php7.0-json \
