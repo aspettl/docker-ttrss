@@ -2,11 +2,12 @@ FROM ubuntu
 MAINTAINER Christian Lück <christian@lueck.tv>
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y \
-  nginx supervisor php5-fpm php5-cli php5-curl php5-gd php5-json \
-  php5-pgsql php5-mysql php5-mcrypt && apt-get clean && rm -rf /var/lib/apt/lists/*
+  nginx supervisor php7.0-fpm php7.0-cli php7.0-curl php7.0-gd php7.0-json \
+  php7.0-pgsql php7.0-mbstring php7.0-mysql php7.0-mcrypt php7.0-xml \
+  && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# enable the mcrypt module
-RUN php5enmod mcrypt
+# create folder needed for PHP socket (configured in /etc/php/7.0/fpm/pool.d/www.conf)
+RUN mkdir -p /run/php
 
 # add ttrss as the only nginx site
 ADD ttrss.nginx.conf /etc/nginx/sites-available/ttrss
