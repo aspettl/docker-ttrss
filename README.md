@@ -1,19 +1,17 @@
 # docker-ttrss
 
-This [Docker](https://www.docker.com) image allows you to run the [Tiny Tiny RSS](http://tt-rss.org) feed reader.
-Keep your feed history to yourself and access your RSS and atom feeds from everywhere.
-You can access it through an easy to use webinterface on your desktop, your mobile browser
-or using one of the available apps.
+This [Docker](https://www.docker.com) image allows you to run the [Tiny Tiny RSS](https://tt-rss.org) feed reader.
+It is based on the [Docker image by clue](https://github.com/clue/docker-ttrss), but provides
+a recent version and regular updates.
 
 ## About Tiny Tiny RSS
 
-> *From [the official readme](http://tt-rss.org/redmine/projects/tt-rss/wiki):*
+> *From [the official readme](https://git.tt-rss.org/fox/tt-rss/src/master/README.md):*
 
-Tiny Tiny RSS is an open source web-based news feed (RSS/Atom) reader and aggregator,
-designed to allow you to read news from any location,
-while feeling as close to a real desktop application as possible.
+Web-based news feed aggregator, designed to allow you to read news from any location, while
+feeling as close to a real desktop application as possible.
 
-![](http://tt-rss.org/images/1.9/1.jpg)
+![](https://tt-rss.org/images/17.12/shot_3pane.png)
 
 ## Quickstart
 
@@ -26,11 +24,11 @@ Just start up a new database container:
 $ docker run -d --name ttrssdb nornagon/postgres
 ```
 
-And because this docker image is available as a [trusted build on the docker index](https://index.docker.io/u/clue/ttrss/),
+And because this docker image is available as a [trusted build on the docker index](https://hub.docker.com/r/aspettl/docker-ttrss/),
 using it is as simple as launching this Tiny Tiny RSS installation linked to your fresh database:
 
 ```bash
-$ docker run -d --link ttrssdb:db -p 80:80 clue/ttrss
+$ docker run -d --link ttrssdb:db -p 80:80 aspettl/docker-ttrss
 ```
 
 Running this command for the first time will download the image automatically.
@@ -171,7 +169,7 @@ This is particular useful for your initial database setup, as errors get reporte
 the console and further execution will halt.
 
 ```bash
-$ docker run -it --link tinydatabase:db -p 80:80 clue/ttrss
+$ docker run -it --link tinydatabase:db -p 80:80 aspettl/docker-ttrss
 ```
 
 ### Running ttrss daemonized
@@ -182,5 +180,5 @@ Remaining arguments can be passed just like before, the following is the recomme
 minimum:
 
 ```bash
-$ docker run -d --link tinydatabase:db -p 80:80 clue/ttrss
+$ docker run -d --link tinydatabase:db -p 80:80 aspettl/docker-ttrss
 ```
