@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 LABEL maintainer="aaron@spettl.de"
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y \
-  nginx supervisor php7.0-fpm php7.0-cli php7.0-curl php7.0-gd php7.0-json \
+  nginx supervisor php7.0-fpm php7.0-cli php7.0-curl php7.0-gd php7.0-intl php7.0-json \
   php7.0-pgsql php7.0-mbstring php7.0-mysql php7.0-mcrypt php7.0-xml \
   && apt-get clean && rm -rf /var/lib/apt/lists/*
 
