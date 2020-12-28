@@ -1,12 +1,12 @@
-FROM ubuntu:16.04
+FROM ubuntu:20.04
 LABEL maintainer="aaron@spettl.de"
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y \
-  nginx supervisor php7.0-fpm php7.0-cli php7.0-curl php7.0-gd php7.0-intl php7.0-json \
-  php7.0-pgsql php7.0-mbstring php7.0-mysql php7.0-mcrypt php7.0-xml \
+  nginx supervisor php7.4-fpm php7.4-cli php7.4-curl php7.4-gd php7.4-intl php7.4-json \
+  php7.4-pgsql php7.4-mbstring php7.4-mysql php7.4-xml \
   && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# create folder needed for PHP socket (configured in /etc/php/7.0/fpm/pool.d/www.conf)
+# create folder needed for PHP socket (configured in /etc/php/7.4/fpm/pool.d/www.conf)
 RUN mkdir -p /run/php
 
 # add ttrss as the only nginx site
