@@ -4,6 +4,10 @@ This [Docker](https://www.docker.com) image allows you to run the [Tiny Tiny RSS
 It is based on the [Docker image by clue](https://github.com/clue/docker-ttrss), but provides
 a recent version and regular updates.
 
+Note: if you use PostgreSQL as a database server, then consider using the [official installation notes](https://tt-rss.org/wiki/InstallationNotes).
+Docker images prebuilt from [ttrss-docker-compose (static-dockerhub branch)](https://git.tt-rss.org/fox/ttrss-docker-compose/src/static-dockerhub)
+are available on DockerHub.
+
 ## About Tiny Tiny RSS
 
 > *From [the official readme](https://git.tt-rss.org/fox/tt-rss/src/master/README.md):*
