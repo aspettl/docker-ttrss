@@ -67,50 +67,6 @@ database instance and configuration you're relying on.
 Also, this makes this container quite disposable, as it doesn't store any sensitive
 information at all.
 
-#### PostgreSQL container
-
-The recommended way to run this container is by linking it to a PostgreSQL database instance.
-You're free to pick (or build) any PostgreSQL container, as long as it exposes
-its database port (5432) to the outside.
-
-Example with nornagon/postgres:
-
-```bash
-$ docker run -d --name=tinydatabase nornagon/postgres:latest
-```
-
-> The image nornagon/postgres exposes a database superuser that this image uses
-to automatically create its user and database,
-so you don't have to setup your database credentials here.
-
-Use the following database options when running the container:
-
-```
---link tinydatabase:db
-```
-
-#### MySQL container
-
-If you'd like to use ttrss with a mysql database backend, simply link it to a
-mysql container instead.
-You're free to pick (or build) any MySQL container, as long as it exposes
-its database port (3306) to the outside.
-
-Example with sameersbn/mysql:
-
-```bash
-$ docker run -d --name=tinydatabase -e DB_USER=ttrss -e DB_PASS=ttrss -e DB_NAME=ttrss sameersbn/mysql:latest
-```
-
-> The image sameersbn/mysql does not expose a database superuser,
-so you have to explicitly pass the database credentials here.
-
-Use the following database options when running the container:
-
-```
---link tinydatabase:db
-```
-
 #### External database server
 
 If you already have a PostgreSQL or MySQL server around off docker you also can go with that.
