@@ -129,7 +129,7 @@ This is particular useful for your initial database setup, as errors get reporte
 the console and further execution will halt.
 
 ```bash
-$ docker run -it --link tinydatabase:db -p 80:80 aspettl/docker-ttrss
+$ docker run -it --link ttrssdb:db -p 80:80 aspettl/docker-ttrss
 ```
 
 ### Running ttrss daemonized
@@ -140,5 +140,5 @@ Remaining arguments can be passed just like before, the following is the recomme
 minimum:
 
 ```bash
-$ docker run -d --link tinydatabase:db -p 80:80 aspettl/docker-ttrss
+$ docker run -d --link ttrssdb:db -p 80:80 aspettl/docker-ttrss
 ```
