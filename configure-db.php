@@ -90,7 +90,7 @@ try {
 }
 catch (PDOException $e) {
     echo 'Database table not found, applying schema... ' . PHP_EOL;
-    $schema = file_get_contents('schema/ttrss_schema_' . $config['DB_TYPE'] . '.sql');
+    $schema = file_get_contents('sql/' . $config['DB_TYPE'] . '/schema.sql');
     $schema = preg_replace('/--(.*?);/', '', $schema);
     $schema = preg_replace('/[\r\n]/', ' ', $schema);
     $schema = trim($schema, ' ;');
